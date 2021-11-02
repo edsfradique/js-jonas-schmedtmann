@@ -80,6 +80,10 @@ lines');
 console.log(`String with
 multiple
 line`);
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> main
 
 const age = 15;
 
@@ -99,6 +103,7 @@ if (birthYear <= 2000) {
   century = 21;
 }
 console.log(century);
+<<<<<<< HEAD
 */
 
 // type conversion
@@ -119,3 +124,5 @@ console.log('23' / '2');
 let n = '1' + 1; // '11'
 n = n - 1;
 console.log(n);
+=======
+>>>>>>> main
