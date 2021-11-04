@@ -334,7 +334,6 @@ for (let i = 0; i < jonasArray.length; i += 1) {
 
   console.log(jonasArray[i], typeof jonasArray[i]);
 }
-*/
 
 const jonas = [
   'Jonas',
@@ -360,3 +359,23 @@ for (let exercise = 1; exercise < 4; exercise += 1) {
     );
   }
 }
+
+// for (let i = 1; i <= 10; i += 1) {
+//   console.log(`Exercise Lifting weight repetition ${i}`);
+// }
+
+// let i = 1;
+// while (i <= 10) {
+//   console.log(`WHILE: Exercise Lifting weight repetition ${i}`);
+//   i += 1;
+// }
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log('Loop is about to end...');
+}
+*/
