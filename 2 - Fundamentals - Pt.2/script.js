@@ -289,7 +289,6 @@ console.log(jonas.getSummary());
 for (let i = 1; i <= 10; i += 1) {
   console.log(`Lifting weights repetition ${i}`);
 }
-*/
 
 const jonasArray = [
   'Jonas',
@@ -334,4 +333,30 @@ for (let i = 0; i < jonasArray.length; i += 1) {
   if (typeof jonasArray[i] === 'number') break;
 
   console.log(jonasArray[i], typeof jonasArray[i]);
+}
+*/
+
+const jonas = [
+  'Jonas',
+  'Schmedtmann',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven'],
+  true
+];
+
+for (let i = jonas.length - 1; i >= 0; i -= 1) {
+  // console.log(i, jonas[i]);
+}
+
+let count = 0;
+for (let exercise = 1; exercise < 4; exercise += 1) {
+  console.log(`----- Starting exercise ${exercise} -----`);
+
+  for (let i = 1; i < 6; i += 1) {
+    count += 1;
+    console.log(
+      `Exercise ${exercise}: Lifting weight repetition ${i} -- ${count}`
+    );
+  }
 }
