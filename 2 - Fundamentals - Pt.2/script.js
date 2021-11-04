@@ -202,7 +202,6 @@ const jonas = {
   job: 'teacher',
   friends: ['Michael', 'Peter', 'Steven']
 };
-*/
 
 const jonas = {
   firstName: 'Jonas',
@@ -212,32 +211,67 @@ const jonas = {
   friends: ['Michael', 'Peter', 'Steven']
 };
 
-// console.log(jonas);
+console.log(jonas);
 
-// console.log(jonas.lastName);
-// console.log(jonas['lastName']);
+console.log(jonas.lastName);
+console.log(jonas['lastName']);
 
-// const namekey = 'Name';
-// console.log(jonas['first' + namekey]);
-// console.log(jonas['last' + namekey]);
+const namekey = 'Name';
+console.log(jonas['first' + namekey]);
+console.log(jonas['last' + namekey]);
 
-// const input = prompt(
-//   'what do you want to know about Jonas? Choose between firstName, lastName, age, job and friends'
-// );
-// // console.log(jonas[input]);
+const input = prompt(
+  'what do you want to know about Jonas? Choose between firstName, lastName, age, job and friends'
+);
+// console.log(jonas[input]);
 
-// if (jonas[input]) {
-//   console.log(jonas[input]);
-// } else {
-//   console.log(
-//     'Wrong request! Choose between firstName, lastName, age, job and friends'
-//   );
-// }
+if (jonas[input]) {
+  console.log(jonas[input]);
+} else {
+  console.log(
+    'Wrong request! Choose between firstName, lastName, age, job and friends'
+  );
+}
 
-// jonas.location = 'Portugal';
-// jonas['twitter'] = '@jonasschmedtman';
-// console.log(jonas);
+jonas.location = 'Portugal';
+jonas['twitter'] = '@jonasschmedtman';
+console.log(jonas);
 
 console.log(
   `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
 );
+*/
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriversLicense: true,
+
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2037 - this.birthYear;
+  // }
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+  getSummary: function () {
+    return `${
+      this.firstName
+    } is a ${this.calcAge()}-years old teachers, and he has ${
+      this.hasDriversLicense ? 'a' : 'no'
+    } driver's license`;
+  }
+};
+
+console.log(jonas.calcAge());
+
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+// console.log(jonas['calcAge']());
+
+console.log(jonas.getSummary());
