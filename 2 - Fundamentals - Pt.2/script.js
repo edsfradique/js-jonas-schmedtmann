@@ -47,7 +47,6 @@ const calcAg2 = function (birthYear) {
 const age2 = calcAg2(1991);
 
 console.log(age1, age2);
-*/
 
 // Arrow function
 
@@ -63,3 +62,30 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 };
 
 console.log(yearsUntilRetirement(1991, 'Jonas'));
+*/
+
+// function cutFruitPieces(fruit) {
+//   return fruit * 4;
+// }
+
+const cutFruitPieces = (fruit) => fruit * 3;
+
+// function fruitProcessor(apples, oranges) {
+//   const applePieces = cutFruitPieces(apples);
+//   const orangePieces = cutFruitPieces(oranges);
+
+//   const juice = `Juice with ${applePieces} pieces of apples and ${orangePieces} pieces of oranges.`;
+//   return juice;
+// }
+
+function fruitProcessor(apples, oranges) {
+  // const applePieces = cutFruitPieces(apples);
+  // const orangePieces = cutFruitPieces(oranges);
+
+  const juice = `Juice with ${cutFruitPieces(
+    apples
+  )} pieces of apples and ${cutFruitPieces(oranges)} pieces of oranges.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3));
