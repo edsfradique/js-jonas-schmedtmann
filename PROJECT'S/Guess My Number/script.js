@@ -27,6 +27,7 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = 'Correct Number!';
     document.querySelector('body').style.backgroundColor = 'green';
     document.querySelector('.number').style.width = '30rem';
+
     // Tentativa acima
   } else if (guess > secretNumber) {
     if (score > 1) {
