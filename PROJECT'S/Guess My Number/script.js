@@ -22,19 +22,12 @@ bCheck.addEventListener('click', function () {
       highscore = score;
       document.querySelector('.highscore').textContent = highscore;
     }
-  } else if (guess > randomNumber) {
+  } else if (guess !== randomNumber) {
     if (score > 1) {
-      message.textContent = 'Acima!';
-      score -= 1;
-      document.querySelector('.score').textContent = score;
-    } else {
-      message.textContent = 'Você perdeu!';
-      score = 0;
-      document.querySelector('.score').textContent = score;
-    }
-  } else if (guess < randomNumber) {
-    if (score > 1) {
-      message.textContent = 'Abaixo!';
+      message.textContent =
+        guess > randomNumber
+          ? (message.textContent = 'Acima!')
+          : (message.textContent = 'Abaixo!');
       score -= 1;
       document.querySelector('.score').textContent = score;
     } else {
