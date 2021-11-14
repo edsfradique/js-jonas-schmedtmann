@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pig Game</title>
+  </head>
+  <body>
+    <main>
+      <section class="modal hidden">
+        <div>
+          <button id="close-modal">&times;</button>
+          <h1>REGRAS</h1>
+          <div>
+            <p>
+              Ao usar o botão "ROLL DICE", um número aleatório entre 1~6 é
+              gerado no marcador central. Esse número será adicionado ao
+              "Current" localizado no retângulo cinza abaixo do marcador central
+              do PLAYER. Uma borda PRETA é utilizada para selecionar o PLAYER
+              atual. A cada click no "ROLL DICE", um novo valor é incrementado
+              ao "Current" score do PLAYER atual. Caso o número gerado seja 1, o
+              valor do "Current" será redefinido para 0 e o PLAYER atual perderá
+              a vez. Caso o PLAYER queira computar o "Current" score ao "SCORE
+              GLOBAL", localizado abaixo da TAG "PLAYER 1 ~ 2", ele deverá usar
+              o botão "HOLD". Dessa forma, ele assegura seu score, evitando uma
+              redefinição num eventual "ROLL DICE" de valor 1. Vence o PLAYER
+              que assegurar um "SCORE GLOBAL" igual ou maior que 100!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="section0" class="select section">
+        <div class="hold-score">
+          <h1>Player 1</h1>
+          <h1 id="global-score0">0</h1>
+        </div>
+        <div class="score">
+          <div>Current</div>
+          <div id="score--0" class="score-ajuste">0</div>
+        </div>
+      </section>
+      <section id="sectionfloat">
+        <button id="new-game">NEW GAME</button>
+        <button id="regras">REGRAS</button>
+        <div id="score">0</div>
+        <button id="roll">ROLL DICE</button>
+        <button id="hold">HOLD</button>
+      </section>
+      <section id="section1" class="section">
+        <div class="hold-score">
+          <h1>Player 2</h1>
+          <h1 id="global-score1">0</h1>
+        </div>
+        <div class="score">
+          <div>Current</div>
+          <div id="score--1" class="score-ajuste">0</div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
