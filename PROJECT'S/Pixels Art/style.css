@@ -26,6 +26,19 @@ header {
 
 h1 {
   text-align: center;
+  margin-top: 2.5%;
+  font-size: 100px;
+  background-image: url(https://media0.giphy.com/media/DXlNcsmlvSNtsTIBuq/giphy.gif?cid=ecf05e47tsmx015boet384ibuf5kc4xh40pcpeomyzub6zer&rid=giphy.gif&ct=g);
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 100px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 8px 4px 4px black;
+  margin-top: 0;
+  line-height: 150px;
 }
 
 #choice-container {
@@ -48,6 +61,7 @@ h1 {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  border: 2px dashed black;
 }
 
 #input-container {
@@ -87,5 +101,5 @@ button {
 .pixel {
   width: 20px;
   height: 20px;
-  border: 0.1px solid dimgray;
+  border: 0.1px solid black;
 }

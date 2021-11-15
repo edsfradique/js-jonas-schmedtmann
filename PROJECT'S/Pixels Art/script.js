@@ -15,12 +15,13 @@ const getRandomColor = () =>
 
 // Constroi o container de cores
 const createColorContainer = () => {
-  for (let i = 1; i < choiceColors.length - 1; i += 1) {
+  for (let i = 1; i < choiceColors.length - 2; i += 1) {
     choiceColors[i].style.backgroundColor = getRandomColor();
-    choiceColors[0].style.backgroundColor = 'white';
-    choiceColors[choiceColors.length - 1].style.backgroundColor =
+    choiceColors[0].style.backgroundColor = inputColor.value;
+    choiceColors[0].classList.add('select');
+    choiceColors[choiceColors.length - 2].style.backgroundColor =
       'rgb(20, 20, 20)';
-    choiceColors[choiceColors.length - 1].classList.add('select');
+    choiceColors[choiceColors.length - 2].classList.add('select');
   }
 };
 
@@ -43,7 +44,7 @@ const selectColor = () => {
   }
 };
 
-// Constroi quadro de pixels
+// Constroi o quadro de pixels
 const createPixelsBoardLine = (params) => {
   const amountPixels = params;
   for (let i = 1; i <= amountPixels; i += 1) {
