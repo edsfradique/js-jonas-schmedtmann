@@ -5,6 +5,7 @@ const inputLines = document.querySelector('#input-lines');
 const inputColumns = document.querySelector('#input-columns');
 const btnOK = document.querySelector('#btn-ok');
 const btnR = document.querySelector('#choice-roll');
+const inputColor = document.querySelector('#input-color');
 
 // Gera a cor aleatória
 const getNumberRandom = () => Math.trunc(Math.random() * 255) + 1;
@@ -16,9 +17,10 @@ const getRandomColor = () =>
 const createColorContainer = () => {
   for (let i = 1; i < choiceColors.length - 1; i += 1) {
     choiceColors[i].style.backgroundColor = getRandomColor();
-    choiceColors[0].style.backgroundColor = 'rgb(20, 20, 20)';
-    choiceColors[0].classList.add('select');
-    choiceColors[choiceColors.length - 1] = 'white';
+    choiceColors[0].style.backgroundColor = 'white';
+    choiceColors[choiceColors.length - 1].style.backgroundColor =
+      'rgb(20, 20, 20)';
+    choiceColors[choiceColors.length - 1].classList.add('select');
   }
 };
 
@@ -107,6 +109,12 @@ const rollColors = () => {
   });
 };
 
+const inputColorChange = () => {
+  inputColor.addEventListener('input', () => {
+    choiceColors[0].style.backgroundColor = inputColor.value;
+  });
+};
+
 // window.onload
 window.onload = () => {
   createColorContainer();
@@ -116,4 +124,5 @@ window.onload = () => {
   paintPixelsBoard();
   chanceBoardSize();
   rollColors();
+  inputColorChange();
 };

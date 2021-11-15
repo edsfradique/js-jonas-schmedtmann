@@ -68,8 +68,14 @@ input {
   width: 40px;
 }
 
+#input-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+}
+
 button {
-  width: 75px;
+  width: 60px;
 }
 
 #pixels-container {
