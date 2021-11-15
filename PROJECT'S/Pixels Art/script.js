@@ -5,6 +5,7 @@ const inputLines = document.querySelector('#input-lines');
 const inputColumns = document.querySelector('#input-columns');
 const btnOK = document.querySelector('#btn-ok');
 const btnR = document.querySelector('#choice-roll');
+const btnOff = document.querySelector('#btn-off');
 const inputColor = document.querySelector('#input-color');
 
 // Gera a cor aleatória
@@ -116,6 +117,18 @@ const inputColorChange = () => {
   });
 };
 
+const btnOffChange = () => {
+  const h1 = document.querySelector('h1');
+  btnOff.addEventListener('click', () => {
+    h1.classList.toggle('hidden');
+    if (btnOff.textContent === 'OFF') {
+      btnOff.textContent = 'ON';
+    } else {
+      btnOff.textContent = 'OFF';
+    }
+  });
+};
+
 // window.onload
 window.onload = () => {
   createColorContainer();
@@ -126,4 +139,5 @@ window.onload = () => {
   chanceBoardSize();
   rollColors();
   inputColorChange();
+  btnOffChange();
 };
