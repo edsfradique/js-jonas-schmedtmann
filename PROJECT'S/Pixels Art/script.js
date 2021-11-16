@@ -97,14 +97,14 @@ const clearBoard = () => {
 const chanceBoardSize = () => {
   btnOK.addEventListener('click', () => {
     if (
-      inputLines.value > 80 ||
+      inputLines.value > 100 ||
       inputLines.value < 1 ||
-      inputColumns.value > 80 ||
+      inputColumns.value > 100 ||
       inputColumns.value < 1
     ) {
       window.alert(`
-LINES - MIN VALUE : 1 - MAX VALUE : 80
-COLUMNS - MIN VALUE : 1 - MAX VALUE : 80`);
+LINES - MIN VALUE : 1 - MAX VALUE : 100
+COLUMNS - MIN VALUE : 1 - MAX VALUE : 100`);
     } else {
       clearBoard();
       createColorContainer();
@@ -166,8 +166,8 @@ $('#btn-print').click(() => {
 // window.onload
 window.onload = () => {
   createColorContainer();
-  createPixelsBoardLine(48);
-  createPixelsBoardColumn(24);
+  createPixelsBoardLine(72);
+  createPixelsBoardColumn(36);
   selectColor();
   paintPixelsBoard();
   chanceBoardSize();
