@@ -5,11 +5,13 @@ const inputLines = document.querySelector('#input-lines');
 const inputColumns = document.querySelector('#input-columns');
 const btnOK = document.querySelector('#btn-ok');
 const btnR = document.querySelector('#choice-roll');
+const btnOff = document.querySelector('#btn-off');
 const inputColor = document.querySelector('#input-color');
+const btnBorder = document.querySelector('#btn-border');
+const btnPrint = document.querySelector('#btn-print');
 
 // Gera a cor aleatória
 const getNumberRandom = () => Math.trunc(Math.random() * 255) + 1;
-
 const getRandomColor = () =>
   `rgb(${getNumberRandom()}, ${getNumberRandom()}, ${getNumberRandom()})`;
 
@@ -78,6 +80,16 @@ const paintPixelsBoard = () => {
 };
 
 // Adiciona funções aos inputs e buttons
+const btnBorderChange = () => {
+  const pixels = document.querySelectorAll('.pixel');
+  btnBorder.addEventListener('click', () => {
+    for (let i = 0; i < pixels.length; i += 1) {
+      pixels[i].classList.toggle('pixel');
+      pixels[i].classList.toggle('no-border');
+    }
+  });
+};
+
 const clearBoard = () => {
   pixelsContainer.innerHTML = '';
 };
@@ -85,14 +97,14 @@ const clearBoard = () => {
 const chanceBoardSize = () => {
   btnOK.addEventListener('click', () => {
     if (
-      inputLines.value > 65 ||
+      inputLines.value > 80 ||
       inputLines.value < 1 ||
-      inputColumns.value > 50 ||
+      inputColumns.value > 80 ||
       inputColumns.value < 1
     ) {
       window.alert(`
-LINES - MIN VALUE : 1 - MAX VALUE : 65
-COLUMNS - MIN VALUE : 1 - MAX VALUE : 50`);
+LINES - MIN VALUE : 1 - MAX VALUE : 80
+COLUMNS - MIN VALUE : 1 - MAX VALUE : 80`);
     } else {
       clearBoard();
       createColorContainer();
@@ -100,6 +112,7 @@ COLUMNS - MIN VALUE : 1 - MAX VALUE : 50`);
       createPixelsBoardColumn(inputColumns.value);
       selectColor();
       paintPixelsBoard();
+      btnBorderChange();
     }
   });
 };
@@ -116,6 +129,40 @@ const inputColorChange = () => {
   });
 };
 
+const btnOffChange = () => {
+  const h1 = document.querySelector('h1');
+  btnOff.addEventListener('click', () => {
+    h1.classList.toggle('hidden');
+    if (btnOff.textContent === 'OFF') {
+      btnOff.textContent = 'ON';
+      btnOff.classList.add('btn-success');
+      btnOff.classList.remove('btn-danger');
+    } else {
+      btnOff.textContent = 'OFF';
+      btnOff.classList.remove('btn-success');
+      btnOff.classList.add('btn-danger');
+    }
+  });
+};
+
+$('#btn-print').click(() => {
+  html2canvas(pixelsContainer).then((canvas) => {
+    saveAs(canvas.toDataURL(), 'download.png');
+  });
+  function saveAs(uri, filename) {
+    const link = document.createElement('a');
+    if (typeof link.download === 'string') {
+      link.href = uri;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      window.open(uri);
+    }
+  }
+});
+
 // window.onload
 window.onload = () => {
   createColorContainer();
@@ -126,4 +173,6 @@ window.onload = () => {
   chanceBoardSize();
   rollColors();
   inputColorChange();
+  btnOffChange();
+  btnBorderChange();
 };
